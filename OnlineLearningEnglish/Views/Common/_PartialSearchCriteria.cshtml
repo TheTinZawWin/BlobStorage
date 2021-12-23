@@ -1,0 +1,190 @@
+﻿ 
+<div id="ContentSearch" class="card shadow cardNoCurve bggray">
+    <div class="card-body">
+        <div class="row mb-3 sm-mb-0">
+
+            <div class="input-group equipmentstyle col-xl-4 col-lg-4 col-md-4 col-sm-6 mt-1">
+                <select id="resourceType" class="form-control ims-select2" placeholder="Resource Type"></select>
+            </div>
+            <div class="input-group col-xl-5 col-lg-5 col-md-5 col-sm-6">
+                <input id="txtSubSearch" type="text" class="form-control mt-1 " placeholder="Resource Name/Description/Tag" aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    @*<button class="btn btn-secondary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>*@
+                </div>
+            </div>
+            <div class="input-group col-xl-2 col-lg-2 col-md-2 col-sm-12">
+                <div class="btn-group btn-group-toggle mr-2 sm-btn-center" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary active" id="Facilities">
+                        <input type="radio" name="faciequip-radio" id="Facilities-radio" value="facilities" checked> Facility
+                    </label>
+                    <label class="btn btn-outline-secondary" id="Equipments">
+                        <input type="radio" name="faciequip-radio" id="radEquipments-radio" value="equipments"> Equipment
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-3 mt-1 sm-mb-0">
+                <input type="text"  class="form-control bkdtp bggray" id="searchSlotDate" placeholder="Date" readonly="readonly">
+            </div>
+            <div class="row col-xl-4 col-lg-4 col-md-4 col-sm-6 mb-3 p-0 sm-mb-0">
+                <div id="divStartTime" class="col-6 mt-2 d-flex justify-content-center sm-mb-0"><p class="sm-mb-0">Start Time:</p></div>
+                <div class="col-6">
+                    <select id="SearchHoursFrom" class="form-control sm-mb-0"></select>
+                </div>
+            </div>
+            <div class="row col-xl-4 col-lg-4 col-md-4 col-sm-6 mb-3 p-0">
+                <div id="divEndTime" class="col-6 mt-2 d-flex justify-content-center sm-mb-0"><p class="sm-mb-0">End Time:</p></div>
+                <div class="col-6">
+                    <select id="SearchHoursTo" class="form-control sm-mb-0"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row col-xl-6 col-lg-8 col-sm-6 p-0 menuchevron">
+                <p>
+                    <a id="collapseContentAdvanceSearch" class="ml-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Advance Search <i id="caretRightLeft_Search" class="fa fa-fw fa-chevron-down"></i>
+                    </a>
+                </p>
+            </div>
+            <div class="row col-xl-3 col-lg-8 col-sm-6 p-0">
+
+            </div>
+        </div>
+
+        <div class="collapse" id="collapseExample">
+            <div class="row">
+                <div class="col-xl-4 col-lg-8 col-md-4 col-sm-4  mb-3 sm-mb-0">
+                    <select id="bookingstatus" class="form-control  sm-mb-0">
+                        <option data-description="" data-type="Char" value="Available" data-controltype="dropdown" data-datasource="" data-desckey="">Available</option>
+                        @*<option data-description="" data-type="Char" value="Booked" data-controltype="dropdown" data-datasource="" data-desckey="">Booked </option>*@
+                        <option data-description="" data-type="Char" value="All" data-controltype="dropdown" data-datasource="" data-desckey="">All </option>
+                    </select>
+                </div>
+                @*<div class="equipmentstyle col-xl-4 col-lg-8 col-sm-6  mb-3">
+            <input type="text" class=" w-100 h-100 form-control my-0 py-1 red-border capacity" value="" id="capacity" autocomplete="off" placeholder="Capacity" name="capacity" min="1" max="999"  maxlength="3" onkeypress="if (this.value == '0') return this.value='';" />
+        </div>*@
+                <div class="equipmentstyle col-xl-6 col-lg-8 col-md-8 col-sm-12  mb-3 mt-0 hidecInEqui  sm-mb-0">
+                    <div id="srcGrpCapacity" class="row">
+                        <label class="col-sm-2 ptop advLblCap">Capacity: </label>
+                        <div class="col-sm-3 ptop advSelCap">
+                            <select class="form-control " id="srcCapacityOperator" name="CapacityOperator" placeholder="Operator">
+                                <option value="<">&lt;</option>
+                                <option value=">">&gt;</option>
+                                <option value="=">=</option>
+                                <option value="between">Between</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3 ptop" id="singleCapacity">
+                            <input type="text" id="srcCapacity" name="Capacity" class="form-control capacity  sm-mb-0" placeholder="Capacity" min="1" max="999" maxlength="3" />
+                        </div>
+                        <div class="col-sm-7 form-row d-none ptop" id="betweenCapacity">
+                            <input type="text" id="srcMinCapacity" name="MinCapacity" class="form-control col-sm-5 capacity" placeholder="Min. Capacity" min="1" max="999" maxlength="3" />
+                            <span class="col-sm-2 center ptop"> to</span>
+                            <input type="text" id="srcMaxCapacity" name="MaxCapacity" class="form-control col-sm-5 capacity ptop" placeholder="Max. Capacity" min="1" max="999" maxlength="3" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="equipmentstyle col-xl-4 col-lg-8 col-sm-6  mb-3  sm-mb-0">
+                    <select id="campus" class="form-control ims-select2" placeholder="Campus"></select>
+                </div>
+                <div class="equipmentstyle col-xl-4 col-lg-8 col-sm-6  mb-3 sm-mb-0">
+                    <select id="building" class="form-control ims-select2" placeholder="Building"></select>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="d-flex justify-content-end col-xl-11 col-lg-11 col-md-11 col-sm-12  mb-3 sm-mb-0">
+            <button id="btnBookingMainClear" class="btn btn-min btn-secondary " type="button"
+                    data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseOne">
+                Clear
+            </button>
+            <button id="btnBookingMainSearch" class="btn btn-min btn-success ml-3" type="button"
+                    data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseOne">
+                Search
+            </button>
+
+        </div>
+
+        @*<div class="row">
+                <div class="col-xl-4 col-lg-4 col-sm-12  mb-4 text-black-50">
+                    <span class="m-auto font-weight-bold">Filter By</span>
+
+                </div>
+
+                <div class="d-flex justify-content-end col-xl-8 col-lg-12 col-sm-12 mb-4">
+                    <div class="row">
+                        <div class="btn-group btn-group-toggle mr-2 mb-4" data-toggle="buttons">
+                            <label class="btn btn-outline-secondary active">
+                                <input type="radio" name="faciequip-radio" id="Facilities-radio" value="facilities" checked> Facilities
+                            </label>
+                            <label class="btn btn-outline-secondary">
+                                <input type="radio" name="faciequip-radio" id="radEquipments-radio" value="equipments"> Equipments
+                            </label>
+                        </div>
+                        <div class="text-black-50">
+                            <div class="showhide d-sm-inline-block btn btn-outline-secondary" data-toggle="collapse" data-target="#FilterControl" aria-expanded="false" aria-controls="FilterControl">
+                                <span id="showhide-text">Hide Filter</span>
+                                <i class="fas fa-filter fa-sm text-black-50"></i>
+                                <i id="arrow" class="fas fa-caret-up fa-sm text-black-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="FilterControl" class="row collapse show">
+                <div class="input-group col-xl-8 col-lg-8 col-sm-6 mb-3">
+                    <input type="text" class="form-control bg-light border-1 small" placeholder="Search by keyword" aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-secondary" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="equipmentstyle col-xl-4 col-lg-8 col-sm-6  mb-3">
+                    <input type="number" class="textfield w-100 h-100 form-control my-0 py-1 red-border" value="" id="capacity" placeholder="Capacity" name="capacity" min="0" />
+                </div>
+                <div class="equipmentstyle col-xl-4 col-lg-8 col-sm-6  mb-3">
+                    <select id="campus" class="form-control ims-select2"></select>
+                </div>
+                <div class="equipmentstyle col-xl-4 col-lg-8 col-sm-6  mb-3">
+                    <select id="building" class="form-control ims-select2"></select>
+                </div>
+                <div class="col-xl-4 col-lg-8 col-sm-6  mb-3">
+                    <select id="bookingstatus" class="form-control ims-select2">
+                        <option data-description="" data-type="Char" value="Available" data-controltype="dropdown" data-datasource="" data-desckey="">Available</option>
+                        <option data-description="" data-type="Char" value="Booked" data-controltype="dropdown" data-datasource="" data-desckey="">Booked </option>
+                        <option data-description="" data-type="Char" value="All" data-controltype="dropdown" data-datasource="" data-desckey="">All </option>
+                    </select>
+                </div>
+                <div class="col-xl-4 col-lg-8 col-sm-6  mb-3">
+                    <input type="text" class="form-control bkgdtp" id="searchSlotDate" placeholder="Date">
+                </div>
+
+                <div class="col-xl-4 col-lg-8 col-sm-6  mb-3">
+                    <select id="SearchHoursFrom" class="form-control"></select>
+                </div>
+                <div class="col-xl-4 col-lg-8 col-sm-6  mb-3">
+                    <select id="SearchHoursTo" class="form-control"></select>
+                </div>
+
+                <div class="d-flex justify-content-end col-xl-12 col-lg-8 col-sm-6  mb-3">
+                    <button id="btnBookingMainSearch" class="btn btn-min btn-success" type="button"
+                            data-toggle="collapse" data-target="#collapseFilter" aria-expanded="true" aria-controls="collapseOne">
+                        Search
+                    </button>
+                </div>
+            </div>*@
+
+    </div>
+</div>

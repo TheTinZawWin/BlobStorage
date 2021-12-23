@@ -1,0 +1,390 @@
+﻿@{
+    string functionCode = Session["FunctionCode"] == null ? "" : Session["FunctionCode"].ToString();
+    <div id="subMenu" class="card text-black-50">
+        <div class="card-body pr-1">
+            <ul class="min-width-150 navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                @* Booking *@
+                @if (ViewBag.PageName == "SRB001Page" || ViewBag.PageName == "MRB001Page" || ViewBag.PageName == "SPT001" || ViewBag.PageName == "APV001")
+                {
+                    //Single Booking Page selected
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "SRB001Page" ? "selected-submenu1" : "")" href="@Url.Action("SRB001Page", "SRB001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-address-card"></i>*@
+                                <div>
+                                    <span class="font-weight-bold">Single</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    if (functionCode.Contains("MRB001"))
+                    {
+                        //Multiple Booking Page selected
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "MRB001Page" ? "selected-submenu1" : "")" href="@Url.Action("MRB001Page", "MRB001")">
+                                <div class="form-inline">
+                                    @*<i class="fas fa-fw fa-table"></i>*@
+                                    <div>
+                                        <span>Multiple</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                    if (functionCode.Contains("SPT001"))
+                    {
+                        //Supporter Page Selected
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "SPT001" ? "selected-menu" : "")" href="@Url.Action("SPT001Page", "SPT001")">
+                                <div class="form-inline">
+                                    @*<i class="fas fa-fw fa-table"></i>*@
+                                    <div>
+                                        <span>Support Booking</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                    if (functionCode.Contains("APV001"))
+                    {
+                        //Approval Page selected
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "APV001" ? "selected-submenu1" : "")" href="@Url.Action("APV001Page", "APV001")">
+                                <div class="form-inline">
+                                    @*<i class="fas fa-fw fa-table"></i>*@
+                                    <div>
+                                        <span>Approve Booking</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                }
+
+                @* Booking Management *@
+                @if (ViewBag.PageName == "BookingManagementPage" || ViewBag.PageName == "CNB001" || ViewBag.PageName == "TTS001" || ViewBag.PageName == "RSB001" || ViewBag.PageName == "RRB001" || ViewBag.PageName == "CLR001Page")
+                {
+                    //Cancel Booking Page Selected
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "CNB001" ? "selected-submenu1" : "")" href="@Url.Action("CNB001Page", "CNB001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Cancel Booking</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    //Timetabling Sync Page Selected
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "TTS001" ? "selected-submenu1" : "")" href="@Url.Action("TTS001Page", "TTS001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Timetabling Sync</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    //Reserve booking page selected
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "RSB001" ? "selected-submenu1" : "")" href="@Url.Action("RSB001Page", "RSB001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Reserve Booking</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    if (functionCode.Contains("CLR001"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "CLR001Page" ? "selected-submenu1" : "")" href="@Url.Action("CLR001Page", "CLR001")">
+                                <div class="form-inline">
+                                    @*<i class="fas fa-fw fa-table"></i>*@
+                                    <div>
+                                        <span>Close Resource</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                    if (functionCode.Contains("RRB001"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "RRB001" ? "selected-submenu1" : "")" href="@Url.Action("RRB001Page", "RRB001")">
+                                <div class="form-inline">
+                                    @*<i class="fas fa-fw fa-table"></i>*@
+                                    <div>
+                                        <span>Release Reserve Booking</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                }
+
+                @* Resource Management *@
+                @if (ViewBag.PageName == "ResourceManagementPage" || ViewBag.PageName == "RTC001" || ViewBag.PageName == "RSC001" || ViewBag.PageName == "ASC001" || ViewBag.PageName == "ARS001" || ViewBag.PageName == "ARS002" || ViewBag.PageName == "RTA001" || ViewBag.PageName == "RRA001" || ViewBag.PageName == "BRE001" || ViewBag.PageName == "I4S001")
+                {
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "RSC001" ? "selected-submenu1" : "")" href="@Url.Action("RSC001Page", "RSC001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Resource Configuration</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "RTC001" ? "selected-submenu1" : "")" href="@Url.Action("RTC001Page", "RTC001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Resource Type Configuration</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "RTA001" ? "selected-submenu1" : "")" href="@Url.Action("RTA001Page", "RTA001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Assign Resource to Resource Type</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    @*<li class="nav-item">
+                <a class="nav-link" href="@Url.Action("RTA001Page", "RTA001")">
+                    <div class="form-inline">
+                        <i class="fas fa-fw fa-table"></i>
+                        <div>
+                            @if (ViewBag.PageName == "RTA001")
+                            {
+                                <span class="font-weight-bold">Assign Resource to Resource Type</span>
+                            }
+                            else
+                            {
+                                <span>Assign Resource to Resource Type</span>
+                            }
+                        </div>
+                    </div>
+                </a>
+            </li>*@
+
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "RRA001" ? "selected-submenu1" : "")" href="@Url.Action("RRA001Page", "RRA001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Assign Resource to Resource Owner</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "ASC001" ? "selected-submenu1" : "")" href="@Url.Action("ASC001Page", "ASC001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Associate Resource to Parent Resource</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "ARS001" ? "selected-submenu1" : "")" href="@Url.Action("ARS001Page", "ARS001")">
+                            <div class="form-inline">
+                                @*<i class="fas fa-fw fa-table"></i>*@
+                                <div>
+                                    <span>Add/Edit Resource (Single)</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "ARS002" ? "selected-submenu1" : "")" href="@Url.Action("ARS002Page", "ARS002")">
+                            <div class="form-inline">
+                                <i class="fas fa-fw fa-table"></i>
+                                <div>
+                                    <span>Add/Edit Resource (Multiple)</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "I4S001" ? "selected-submenu1" : "")" href="@Url.Action("I4S001Page", "I4S001")">
+                            <div class="form-inline">
+                                <i class="fas fa-fw fa-table"></i>
+                                <div>
+                                    <span>IN4SIT Programme Configuration</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    @*<li class="nav-item">
+                <a class="nav-link" href="">
+                    <div class="form-inline">
+                        <i class="fas fa-fw fa-table"></i>
+                        <div>
+                            <span>Reserve / Release</span>
+                        </div>
+                    </div>
+                </a>
+            </li>*@
+                    @*<li class="nav-item">
+                <a class="nav-link" href="@Url.Action("BKM001Page", "BKM001")">
+                    <div class="form-inline">
+                        <i class="fas fa-fw fa-table"></i>
+                        <div>
+                            <span>Close Resource</span>
+                        </div>
+                    </div>
+                </a>
+            </li>*@
+                }
+
+                @* User Management Second Menu *@
+                @if (ViewBag.PageName == "USM001" || ViewBag.PageName == "UserManagementPage")
+                {
+                    <li class="nav-item">
+                        <a class="nav-link @(ViewBag.PageName == "USM001" ? "selected-submenu1" : "")" href="@Url.Action("USM001Page", "USM001")">
+                            <div class="form-inline">
+                                <i class="fas fa-fw fa-table"></i>
+                                <div>
+                                    <span>Account Activation/Deactivation</span>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+
+                @* Role Management Second Menu *@
+                @if (ViewBag.PageName == "RoleManagementPage" || ViewBag.PageName == "DAA001" || ViewBag.PageName == "RLA001" || ViewBag.PageName == "RLC001")
+                {
+                    if (functionCode.Contains("RLC001"))
+                    {
+                        //Role Creation Page selected
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "RLC001" ? "selected-submenu1" : "")" href="@Url.Action("RLC001Page", "RLC001")">
+                                <div class="form-inline">
+                                    <i class="fas fa-fw fa-table"></i>
+                                    <div>
+                                        <span>Role Creation</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                    if (functionCode.Contains("RLA001"))
+                    {
+
+                        //Role Assignment Page Selected
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "RLA001" ? "selected-submenu1" : "")" href="@Url.Action("RLA001Page", "RLA001")">
+                                <div class="form-inline">
+                                    <i class="fas fa-fw fa-table"></i>
+                                    <div>
+                                        <span>Role Assignment</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                    if (functionCode.Contains("DAA001"))
+                    {
+                        //Division Admin Assignment Page selected
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "DAA001" ? "selected-submenu1" : "")" href="@Url.Action("DAA001Page", "DAA001")">
+                                <div class="form-inline">
+                                    <i class="fas fa-fw fa-table"></i>
+                                    <div>
+                                        <span>Division Admin Assignment</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                }
+
+                @if (ViewBag.PageName == "EmailPage")
+                {
+                    if (functionCode.Contains("ContentTemplate"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "" ? "selected-submenu1" : "")" href="">
+                                <div class="form-inline">
+                                    <i class="fas fa-fw fa-table"></i>
+                                    <div>
+                                        <span>
+                                            Content Template
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                    if (functionCode.Contains("TCTemplate"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "" ? "selected-submenu1" : "")" href="">
+                                <div class="form-inline">
+                                    <i class="fas fa-fw fa-table"></i>
+                                    <div>
+                                        <span>T&C Template</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                }
+                @if (ViewBag.PageName == "ReportPage")
+                {
+                    if (functionCode.Contains("ReportPage"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "" ? "selected-submenu1" : "")" href="">
+                                <div class="form-inline">
+                                    <i class="fas fa-fw fa-table"></i>
+                                    <div>
+                                        <span>Division</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                    if (functionCode.Contains("ReportPage"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewBag.PageName == "" ? "selected-submenu1" : "")" href="">
+                                <div class="form-inline">
+                                    <i class="fas fa-fw fa-table"></i>
+                                    <div>
+                                        <span>Audit</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+
+}

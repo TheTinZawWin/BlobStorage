@@ -1,0 +1,37 @@
+﻿@if (ViewBag.PageName == "SRB001Page" || ViewBag.PageName == "MRB001Page" || ViewBag.PageName == "SPT001" || ViewBag.PageName == "APV001")
+{
+    <div id="subBookingMenu" class="row mt-2">
+        <a class="nav-link divider-vertical @(ViewBag.PageName == "SRB001Page" ? "selected-submenu2" : "")" href="@Url.Action("SRB001Page", "SRB001")">
+            @*<div class="form-inline">*@
+                @*<i class="fas fa-fw fa-table"></i>*@
+                <div>
+                    <span>Single</span>
+                </div>
+            @*</div>*@
+        </a>
+        <a class="nav-link divider-vertical @(ViewBag.PageName == "MRB001Page" ? "selected-submenu2" : "")" href="@Url.Action("MRB001Page", "MRB001")">
+            @*<div class="form-inline">*@
+                @*<i class="fas fa-fw fa-table"></i>*@
+                <div>
+                    <span>Multiple</span>
+                </div>
+            @*</div>*@
+        </a>
+        <a class="nav-link divider-vertical @(ViewBag.PageName == "SPT001" ? "selected-submenu2" : "")" href="@Url.Action("SPT001Page", "SPT001")">
+            @*<div class="form-inline">*@
+                @*<i class="fas fa-fw fa-table"></i>*@
+                <div>
+                    <span>Support Booking</span>
+                </div>
+            @*</div>*@
+        </a>
+        <a class="nav-link divider-vertical @(ViewBag.PageName == "APV001" ? "selected-submenu2" : "")" href="@Url.Action("APV001Page", "APV001")">
+            @*<div class="form-inline">*@
+                @*<i class="fas fa-fw fa-table"></i>*@
+                <div>
+                    <span>Approve Booking</span>
+                </div>
+            @*</div>*@
+        </a>
+    </div>
+}

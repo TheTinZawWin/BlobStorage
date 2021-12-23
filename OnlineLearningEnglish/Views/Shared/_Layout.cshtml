@@ -1,0 +1,36 @@
+﻿
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        @Styles.Render("~/content/header")
+        @Scripts.Render("~/scripts/header")
+
+    </head>
+    <body class="background">
+      
+      
+
+        <div class="container body-content shiftDown">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @RenderBody()
+            }
+
+
+
+          
+         
+            <footer>
+                @Html.Partial("~/Views/Common/_PartialFooterView.cshtml")
+
+                @RenderSection("scripts", required: false)
+            </footer>
+        </div>
+
+        <footer></footer>
+    </body>
+</html>
+

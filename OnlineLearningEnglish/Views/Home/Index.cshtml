@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="col-xl-12 col-lg-12 col-sm-12 mb-3">
+    <div class="row">
+        <div class="col-lg-6">
+
+
+            <input accept="file" class="required W420 validate[required] inputError" id="UploadFile" name="UploadFile" type="file" value="">
+        </div>
+        <div class="col-lg-6">
+            <button id="btn-customer-file-upload" type="button" Class="button-confirm W100">Upload </button>
+        </div>
+    </div>
+    <table id="tbBlob" class="table table-hide ">
+        <thead class="thead-light">
+            <tr>
+                <th>id</th>
+                <th>name</th>
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+
+    </table>
+    <div class="mt-5">
+        <button type="button" id="btn-blob-view" class="button-confirm W130">View</button>
+        <button type="button" id="btn-blob-modify" class="button-confirm W130">Modify</button>
+        @*<button type="button" id="btn-blob-download" class="button-confirm W130">Download</button>*@
+        <button type="button" id="btn-blob-delete" class="button-confirm W130">Delete</button>
+
+    </div>
+</div>
+<div>
+   
+</div>
+@section scripts
+{
+    @Scripts.Render("~/scripts/blob")
+}

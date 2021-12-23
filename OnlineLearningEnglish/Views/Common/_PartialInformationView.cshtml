@@ -1,0 +1,8 @@
+﻿
+@*@Html.Partial("~/Views/Common/_PartialSecondMenuViewH.cshtml")*@
+@{string userName = @Session["UserName"] == null ? "" : @Session["UserName"].ToString(); }
+
+<div class="ml-auto pr-4 d-none d-lg-block">
+    @userName
+    @*<img src="~/Image/male.png" />*@
+</div>

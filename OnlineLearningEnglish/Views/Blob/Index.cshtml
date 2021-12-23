@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OnlineLearningEnglish.Models.Customer.BlobData>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<div class="col-xl-12 col-lg-12 col-sm-12 mt-3">
+    <div class="row">
+        <div class="col-lg-6">
+
+
+            <input accept="file" class="required W420 validate[required] inputError" id="UploadFile" name="UploadFile" type="file" value="">
+        </div>
+        <div class="col-lg-6">
+            <button id="btn-customer-file-upload" type="button" Class="button-confirm W100 btn btn-success">Upload </button>
+        </div>
+    </div>
+
+
+</div>
+<div id="grid" style="width: 100%; height: 350px;" class="mt-5"></div>
+<div class="modal fade" id="Modal-BlobdetailPopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="display: flex; justify-content: center; align-content: center;">
+        <div class="modal-content" style="justify-content: center; align-content: center;">
+
+            <div class="modal-body">
+                <a id="downloadImageId" class="btn button-confirm display-none">Download</a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <iframe id="blobView" frameborder='0' class="display-none mt-5"> </iframe>
+                <img id="imgBlob" style="width:100%; height:100%;pointer-events:none;" class="display-none" />
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="mt-5">
+    <button type="button" id="btn-blob-view" class="button-confirm W130 btn-success">View</button>
+    <button type="button" id="btn-blob-modify" class="button-confirm W130 btn-warning">Modify</button>
+    @*<button type="button" id="btn-blob-download" class="button-confirm W130">Download</button>*@
+    <button type="button" id="btn-blob-delete" class="button-confirm W130 btn-danger">Delete</button>
+
+</div>
+@section scripts
+{
+    @Scripts.Render("~/scripts/blob")
+}
